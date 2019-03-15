@@ -40,8 +40,12 @@ Install dependancies that will create an environment for the app to run pip3 ins
 * JavaScript
 * Heroku
 * Postgresq
+
 ## Ccontact
 * Email:uwizeyimanahulde1@gmail.com
 * Tel:0782356570
+
+## License
+Copyright (c) 2019
 
 
