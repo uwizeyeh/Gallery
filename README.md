@@ -33,11 +33,15 @@ Install dependancies that will create an environment for the app to run pip3 ins
 * python3.6 manage.py runserver
 * Open terminal on localhost:8000
 
-# Technologies used
+## Technologies used
 * Python 3.6
 * HTML
 * Bootstrap 4
 * JavaScript
 * Heroku
 * Postgresq
+## Ccontact
+* Email:uwizeyimanahulde1@gmail.com
+* Tel:0782356570
+
 
