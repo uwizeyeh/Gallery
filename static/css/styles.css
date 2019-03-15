@@ -3,3 +3,6 @@
   -webkit-transform: scale(1.5); 
   transform: scale(1.5); 
 } 
+img{
+  font-size: 20px;
+}
