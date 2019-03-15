@@ -14,6 +14,11 @@ Python3.6
 Postgres
 python virtualenv
 
+## Activate virtual environment
+Activate virtual environment using python3.6 as default handler
+
+virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
+
  <!-- 
 June 8th, 2018
 By Richard Waweru
