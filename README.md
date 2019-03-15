@@ -6,6 +6,13 @@ Zoom is a simple photo gallery web application to showcase beautiful pictures an
 ## BDD
 
 Simple photo gallery web application to showcase beautiful pictures and designs
+## Set Up and Installations
+
+Prerequisites
+Ubuntu Software
+Python3.6
+Postgres
+python virtualenv
 
  <!-- 
 June 8th, 2018
@@ -15,14 +22,8 @@ Description
 Specifications
 Get the specs here
 
-Set Up and Installations
-Prerequisites
-Ubuntu Software
-Python3.6
-Postgres
-python virtualenv
-Clone the Repo
-Run the following command on the terminal: git clone https://github.com/DevWaweru/Zoom.git && cd Zoom
+
+
 
 Activate virtual environment
 Activate virtual environment using python3.6 as default handler
