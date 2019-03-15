@@ -4,7 +4,10 @@
   transform: scale(1.5); 
 } 
 img{
-  font-size: 20px;
+  transition: transform .2s;
+  width: 350px;
+  height: 250px;
+  margin: 0 auto;
 }
 body{
 background-color:pink; 
