@@ -1,13 +1,13 @@
 ## PROJECT NAME
    ZOOM
+   
 ## Description  
-
 Zoom is a simple photo gallery web application to showcase beautiful pictures and designs. Users get to view photos updated by the site admin. Users can see photos based on the location, by clicking on the listed locations in the menu. They can also copy the link to a photo to paste at their discretion. The search functionality will search photos based on the categories.
+
 ## BDD
-
 Simple photo gallery web application to showcase beautiful pictures and designs
-## Set Up and Installations
 
+## Set Up and Installations
 Prerequisites
 Ubuntu Software
 Python3.6
@@ -20,13 +20,15 @@ Activate virtual environment using python3.6 as default handler
 virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
 
 ## Install dependancies
-
 Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
 
 ## Create the Database
-
 psql
 CREATE DATABASE album;
+
+## Run initial Migration
+python3.6 manage.py makemigrations album
+python3.6 manage.py migrate
 
  <!-- 
 June 8th, 2018
