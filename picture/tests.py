@@ -1,72 +1,59 @@
 from django.test import TestCase
-from .models import Location, Category, Image
+from .models import Category,Image,Location
 
 # Create your tests here.
+
 class LocationTestClass(TestCase):
-    # Set Up Method
-    def setUp(self):
-        self.nairobi = Location(photo_location='Nairobi')
-        self.nairobi.save_location()
+    '''
+    test for Location class
+    '''
 
+    # Set up method
+    def setUp(self):
+        self.loc1= Location(country_name = 'Rwanda', city_name ='Kigali')
+  
     def test_instance(self):
-        self.assertTrue(isinstance(self.nairobi,Location))
-    
-    def test_updating_location(self):
-        location = Location.get_location_id(self.nairobi.id)
-        location.update_location('Kitengela')
-        location = Location.get_location_id(self.nairobi.id)
-        self.assertTrue(location.photo_location == 'Kitengela')
-    
-    def tearDown(self):
-        self.nairobi.delete_location()
-    
+        self.assertTrue(isinstance(self.loc1,Location))
+
 class CategoryTestClass(TestCase):
-    # Set Up Method
+    '''
+    test for Category class
+    '''
+
     def setUp(self):
-        self.sports = Category(photo_category='Sports')
-        self.sports.save_category()
+        self.new_cat= Category(category = 'travel')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.sports,Category))
-    
-    def tearDown(self):
-        self.sports.delete_category()
-    
-    def test_updating_category(self):
-        category = Category.get_category_id(self.sports.id)
-        category.update_category('SUV')
-        category = Category.get_category_id(self.sports.id)
-        self.assertTrue(category.photo_category == 'SUV')
-    
-class ImageTestCase(TestCase):
-    # Set Up Method
+        self.assertTrue(isinstance(self.new_cat,Category))
+
+class ImageTestClass(TestCase):
+    '''
+    test for Image class
+    '''
+
     def setUp(self):
-        self.sports = Category(photo_category='Sports')
-        self.sports.save_category()
+      
+        self.loc1= Location(country_name = 'Rwanda', city_name ='Kigali')
+        self.loc1.save()
 
-        self.nairobi = Location(photo_location='Nairobi')
-        self.nairobi.save_location()
+        
+        self.new_cat = Category(category = 'travel')
+        self.new_cat.save()
 
-        self.image = Image(name='Lamborghini', description='very first car', location=self.nairobi, category=self.sports)
-        self.image.save_image()
-    
+        self.new_image= Image(image = 'sky.jpeg',title = 'sky dive',description = 'a way to live adventure',category = self.new_cat,location = self.loc1)
+        self.new_image.save()
+
+        self.new_image.Category.add(self.new_cat)
+
     def tearDown(self):
-        self.image.delete_image()
-        self.sports.delete_category()
-        self.nairobi.delete_location()
-    
-    def test_get_all_images(self):
-        images = Image.get_all_images()
-        self.assertTrue(len(images)>0)
-    
-    def test_get_image_by_id(self):
-        images = Image.get_image_by_id(self.image.id)
-        self.assertTrue(images == self.image)
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        Image.objects.all().delete()
 
-    def test_search_image(self):
-        images = Image.search_image('Sports')
-        self.assertTrue(len(images)>0)
-    
-    def test_filter_by_location(self):
-        images = Image.filter_by_location('Nairobi')
-        self.assertTrue(len(images)>0)
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_image,Image))
+
+    def test_save_method(self):
+            self.new_image.save()
+            new_images = Image.objects.all()
+            self.assertTrue(len(images) > 0)

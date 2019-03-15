@@ -3,11 +3,11 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns=[
-    url('^$',views.index, name = 'home'),
-    url(r'^image/(?P<category_name>\w+)/(?P<image_id>\d+)',views.single_image, name='art'),
-    url(r'^location/(?P<location>\d+)', views.location_filter, name='location_filter'),
-    url(r'^search', views.search, name='search_images')
+    url(r'^$',views.home,name = 'welcome'),
+    url(r'^search/', views.search_result, name='search_result'),
+    url(r'^image/(\d+)',views.image,name ='image'),
 ]
 
+# if settings.DEBUG:
+#     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
