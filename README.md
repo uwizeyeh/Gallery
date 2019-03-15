@@ -1,5 +1,5 @@
 ## PROJECT NAME
-   ZOOM
+   GALLERY
 
 ## Description  
 Zoom is a simple photo gallery web application to showcase beautiful pictures and designs. Users get to view photos updated by the site admin. Users can see photos based on the location, by clicking on the listed locations in the menu. They can also copy the link to a photo to paste at their discretion. The search functionality will search photos based on the categories.
@@ -15,8 +15,8 @@ Simple photo gallery web application to showcase beautiful pictures and designs
 * python virtualenv
 
 ## Activate virtual environment
-Activate virtual environment using python3.6 as default handler
-virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
+* Activate virtual environment using python3.6 as default handler
+* virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
 
 ## Install dependancies
 Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
