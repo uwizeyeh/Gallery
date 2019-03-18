@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Location(models.Model):
     country_name = models.CharField(max_length =30)
@@ -44,3 +45,8 @@ class Image(models.Model):
     def search_image(cls,search_term):
         images = cls.objects.filter(category__category__icontains = search_term)
         return images
+ 
+    @classmethod
+    def filter_by_location(cls, filter_location):
+        images_location = Image.objects.filter(location__id=filter_location)
+        return images_location 

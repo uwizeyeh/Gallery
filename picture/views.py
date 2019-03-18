@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http  import HttpResponse
 from django.db import models
 from .models import Image
+# from .models import location
 
 
 def home(request):
@@ -23,3 +24,9 @@ def search_result(request):
 def image(request,image_id):
     image = Image.objects.get(id = image_id)
     return render(request,"info.html", {"image":image})
+
+def location_filter(request, location):
+    locations = Location.objects.all()
+    images = Image.filter_by_location(location)
+    title = f'{location} Photos'
+    return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
