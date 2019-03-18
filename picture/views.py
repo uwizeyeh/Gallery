@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http  import HttpResponse
 from django.db import models
-from .models import Image
+from .models import Image,Location
 
 
 def home(request):
@@ -24,8 +24,10 @@ def image(request,image_id):
     image = Image.objects.get(id = image_id)
     return render(request,"info.html", {"image":image})
 
-def location_filter(request, location):
-    locations = Location.objects.all()
-    images = Image.filter_by_location(location)
-    title = f'{location} Photos'
-    return render(request, 'location.html', {'title':title, 'images':images, 'locations':locations})
+def location(request,location_id):
+    try:
+        locations= Location.objects.get(id=location_id)
+        image = Image.objects.filter(location=location_id)
+    except:
+        raise Http404()
+    return render(request,"location.html", {"locations":locations,'image':image})
