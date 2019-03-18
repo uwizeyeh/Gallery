@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.http  import HttpResponse
 from django.db import models
 from .models import Image
-# from .models import location
 
 
 def home(request):

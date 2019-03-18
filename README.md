@@ -6,6 +6,7 @@ Zoom is a simple photo gallery web application to showcase beautiful pictures an
 
 ## BDD
 Simple photo gallery web application to showcase beautiful pictures and designs
+To view a picture you can search by ID,by category,and by location
 
 ## Set Up and Installations
 * Prerequisites
