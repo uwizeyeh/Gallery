@@ -30,12 +30,13 @@
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h3 style="color:rgb(87, 84, 84);"><em>{{img.category}}</em></h3>
-                          <h3 class="modal-title"><strong>{{img.title}}</strong></h3>
+                          
                         </div>
                         <div class="modal-body">
                           <img src="{{img.image.url}}" alt="Image" width='400' length='500'>
-                          <p><strong><em>{{img.description}}</em></strong></p><br>
+                          <h4 class="modal-title">Title:<strong>{{img.title}}</strong></h4>
+                          <h4 style="color:rgb(87, 84, 84);">category:<em>{{img.category}}</em></h4>
+                          <p><strong>Description:<em>{{img.description}}</em></strong></p><br>
                           <h5><strong>Taken in:</strong>{{img.location}}</h5>
                         </div>
                         <div class="modal-footer">
